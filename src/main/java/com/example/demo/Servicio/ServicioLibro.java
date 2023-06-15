@@ -18,4 +18,26 @@ public class ServicioLibro {
     public List<Libro> listarLibros(){
         return repositorio.findAll();
     }
+
+    public Libro buscarLibro(String isbn){
+        return repositorio.findById(isbn).get();
+    }
+
+    public String guardar(Libro libro){
+        if(repositorio.findById(libro.getIsbn()).isPresent()){
+            return "El Libro ya se encuentra registrado";
+        }else{
+            repositorio.save(libro);
+            return libro.getIsbn();
+        }
+    }
+
+    public String actualizar(Libro libro){
+        if(repositorio.findById(libro.getIsbn()).isPresent()){
+            repositorio.save(libro);
+            return "Actualización ok";
+        }else{
+            return "El libro no existe en el sistema.";
+        }
+    }
 }

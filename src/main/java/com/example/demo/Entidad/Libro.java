@@ -19,6 +19,8 @@ public class Libro {
     private String editorial;
     @Column(name = "no_pag")
     private int no_pag;
+    @Column(name = "imagen")
+    private String imagen;
 
     @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Prestamo> prestamo;
@@ -29,6 +31,15 @@ public class Libro {
         this.autor = autor;
         this.editorial = editorial;
         this.no_pag = no_pag;
+    }
+
+    public Libro(String isbn, String titulo, String autor, String editorial, int no_pag, String imagen) {
+        this.isbn = isbn;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.editorial = editorial;
+        this.no_pag = no_pag;
+        this.imagen = imagen;
     }
 
     public Libro() {
@@ -80,6 +91,14 @@ public class Libro {
 
     public void setPrestamo(Set<Prestamo> prestamo) {
         this.prestamo = prestamo;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
     @Override
