@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
-var formLibro=document.getElementById('envioLibro');
+var formLibro=document.getElementById('envioLibro2');
 
-      formLibro.addEventListener('submit',function(e){
+     /* formLibro.addEventListener('submit',function(e){
       e.preventDefault();
 
       var libro=new FormData(formLibro);
@@ -26,7 +26,36 @@ var formLibro=document.getElementById('envioLibro');
                       console.log(respuesta);
                       alert(respuesta)
                   }
-              });
+              });*/
+
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = 'https://ufcbzyemarifjeahojdj.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVmY2J6eWVtYXJpZmplYWhvamRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODc3ODM1OTUsImV4cCI6MjAwMzM1OTU5NX0.kP0HADbhutMyTWNJlMlKPkper53RbuippHhOOmbrTLY';
+
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+alert("Aquiiiii")
+formLibro.addEventListener('submit',function(e){
+      e.preventDefault();
+
+var libro=new FormData(formLibro);
+      alert(libro.get('img'));
+const fileInput = document.getElementById('img');
+
+fileInput.addEventListener('change', async (e) => {
+  const file = e.target.files[0];
+  const { data, error } = await supabase.storage
+    .from('imagenes') // Reemplaza con el nombre de tu bucket en Supabase
+    .upload('prueba', file); // Reemplaza con la carpeta en la que deseas guardar la imagen
+
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('Imagen cargada exitosamente:', data.Key);
+  }
+});
+
 
 });
 /*
