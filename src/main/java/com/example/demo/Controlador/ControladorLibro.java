@@ -3,6 +3,8 @@ package com.example.demo.Controlador;
 import com.example.demo.Entidad.Libro;
 import com.example.demo.Servicio.ServicioLibro;
 import org.springframework.core.io.ByteArrayResource;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +16,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = {"GET", "POST", "PUT", "DELETE"})
@@ -94,5 +98,10 @@ public class ControladorLibro {
         }
 
         return "Error al cargar el archivo";
+    }*/
+
+    /*@GetMapping("/user")
+    public Map<String, Object> usuario(@AuthenticationPrincipal OAuth2User principal){
+        return Collections.singletonMap("email", principal.getAttribute("email"));
     }*/
 }

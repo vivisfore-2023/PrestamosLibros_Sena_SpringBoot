@@ -1,11 +1,12 @@
 package com.example.demo.Repositorio;
 
-import com.example.demo.Entidad.Estudiante;
+import com.example.demo.Entidad.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface repoEstudiante extends JpaRepository<Estudiante, String> {
 
-    Estudiante findByCorreo(String email);
+@Repository
+public interface usuarioRepositorio extends JpaRepository<Usuario,String> {
+
+   Usuario findByEmail(String email);
 }

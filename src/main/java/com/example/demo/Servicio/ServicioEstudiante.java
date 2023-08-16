@@ -18,4 +18,11 @@ public class ServicioEstudiante {
     public List<Estudiante> listarEstudiantes(){
         return repositorio.findAll();
     }
+
+
+    public Estudiante mostrarEstudiante(String email){
+        Estudiante est=null;
+        est=repositorio.findByCorreo(email);
+        return est;
+    }
 }

@@ -2,7 +2,6 @@ package com.example.demo.Controlador;
 
 import com.example.demo.Entidad.Prestamo;
 import com.example.demo.Servicio.ServicioPrestamo;
-import org.primefaces.json.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -28,12 +28,12 @@ var formLibro=document.getElementById('envioLibro2');
                   }
               });*/
 
-import { createClient } from '@supabase/supabase-js';
+/*import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = 'https://ufcbzyemarifjeahojdj.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVmY2J6eWVtYXJpZmplYWhvamRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODc3ODM1OTUsImV4cCI6MjAwMzM1OTU5NX0.kP0HADbhutMyTWNJlMlKPkper53RbuippHhOOmbrTLY';
 
-const supabase = createClient(supabaseUrl, supabaseKey);
+const supabase = createClient(supabaseUrl, supabaseKey);*/
 
 alert("Aquiiiii")
 formLibro.addEventListener('submit',function(e){
