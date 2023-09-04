@@ -3,12 +3,9 @@ package com.example.demo.Controlador;
 import com.example.demo.Entidad.Usuario;
 import com.example.demo.Servicio.ServicioEstudiante;
 import com.example.demo.Servicio.usuarioServicio;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collections;
@@ -27,7 +24,6 @@ public class ControladorUsuario {
 
     @GetMapping("/user")
     public Usuario usuario(@AuthenticationPrincipal OidcUser principal) {
-
             System.out.println(principal.getClaims());
             String email = (String) principal.getClaims().get("email");
             Usuario user = this.userServicio.buscarEmail(email);

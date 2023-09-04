@@ -21,7 +21,7 @@ public class ControladorInicio {
         this.estServicio = estServicio;
     }
 
-    @GetMapping("/") //Ruta Raiz
+    @GetMapping("/inicio") //Ruta Raiz
     public String index(Model model, @AuthenticationPrincipal OidcUser principal) {
 
         if (principal != null) {
@@ -29,7 +29,6 @@ public class ControladorInicio {
             //Usuario user = this.userServicio.getCrearUsuario(principal.getClaims().get("email")); //trae el correo de auth0
             Usuario user = this.userServicio.getCrearUsuario(principal.getClaims());
             model.addAttribute("user",user);
-
             if(user.getRol().equals("Estudiante")){ //Consultar que rol es y redirige a la interfaz de ese usuario
                 return "redirect:/GestionLibros.html";
             }else{
@@ -37,7 +36,7 @@ public class ControladorInicio {
             }
         }
         else{
-            return "index";
+            return "redirect:/";
         }
             //System.out.println(principal.getClaims());//Trae informacion del usuario de inicio de sesio
 

@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
 public class ControladorPrestamo {
 
     private ServicioPrestamo servicio;
@@ -46,7 +46,6 @@ public class ControladorPrestamo {
             datos.put("autor",objects[5]);
             json.add(datos);
         }
-
 
         for(Map<String, Object> j : json){
             System.out.println(j);

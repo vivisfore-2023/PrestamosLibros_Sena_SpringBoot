@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -8,7 +8,6 @@
     <title>Gestión Libros</title>
 </head>
 <body>
-
 <script type="text/javascript">
     $.get("/user", function(data){
     if(data!=null){
@@ -17,18 +16,20 @@
     }
     });
 </script>
+
 <div class="container authenticated mb-3">
     <h1 class="bg-primary display-1 text-light mb-0">Gestion de Libros</h1>
     <h5 class="bg-primary dispaly-5 mt-0">Usuario:<span id="usuario"></span></h5>
     <h5 class="bg-primary dispaly-5 mt-0">Correo:<span id="correo"></span></h5>
+    <a href="/logout">Cerrar Sesion</a>
     <a href="GestionPrestamos.html">Gestión Prestamos</a>
-
+<!--
     <div sec:authorize="isAuthenticated()">
         <form th:action="@{/logout}" method="post">
             <button type="submit" class="btn btn-success">Logout</button>
         </form>
     </div>
-
+-->
 </div>
 <div class="container col-6 aling-center mt-5">
     <div class="container col-6 aling-center" id="formulario"><h2 class="text-success">Agregar Libro</h2></div>
@@ -69,7 +70,7 @@
     <label for="pages" class="form-label text-success">Imagen</label>
     <input type="file" class="form-control" id="img" name="img" required>
 </div>
-<input type="submit" class="btn btn-primary" value="Registrar Libro"/>
+<input type="submit" id="envio" class="btn btn-primary" value="Registrar Libro"/>
 </form></div>
 
 <script src="js/insertaLibro.js"></script>

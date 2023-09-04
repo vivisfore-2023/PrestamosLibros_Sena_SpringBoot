@@ -6,8 +6,6 @@ import com.example.demo.Entidad.Prestamo;
 import com.example.demo.Repositorio.repoEstudiante;
 import com.example.demo.Repositorio.repoLibro;
 import com.example.demo.Repositorio.repoPrestamo;
-import jakarta.persistence.Tuple;
-import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -11,7 +11,23 @@
     <title>Probando Fron-End</title>
 </head>
 <body>
-<div sec:authorize="isAuthenticated()">
+
+<header class="contheader">
+    <div class="titulologo">
+        <div class="titulo"><h1>Gestion de Prestamos de Libros</h1></div>
+        <div class="logo"></div>
+    </div>
+    <nav class="menu">
+        <ul>
+            <li class="lista"><a href="http://localhost:8080/oauth2/authorization/auth0">Iniciar Sesion</a></li>
+            <li class="lista"><a href="GestionLibros.html">Libros</a></li>
+            <li class="lista"><a href="intro.html">Estudiantes</a></li>
+            <li class="lista"><a href="GestionPrestamos.html">Prestamos</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!--<div sec:authorize="isAuthenticated()">
     <form th:action="@{/logout}" method="post">
         <button type="submit" class="btn btn-success">Logout</button>
     </form>
@@ -27,6 +43,7 @@
 <div sec:authorize="!isAuthenticated()">
     <a th:href="@{/oauth2/authorization/auth0}">Inicia Sesion</a>
 </div>
+-->
 
 </body>
 </html>

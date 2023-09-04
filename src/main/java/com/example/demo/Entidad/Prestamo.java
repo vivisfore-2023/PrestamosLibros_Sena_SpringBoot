@@ -1,8 +1,7 @@
 package com.example.demo.Entidad;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 import java.util.Date;
 @Entity
 @Table(name="prestamo")

@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
-var formLibro=document.getElementById('envioLibro2');
+var formLibro=document.getElementById('envioLibro');
 
-     /* formLibro.addEventListener('submit',function(e){
+    formLibro.addEventListener('submit',function(e){
       e.preventDefault();
 
       var libro=new FormData(formLibro);
@@ -26,7 +26,7 @@ var formLibro=document.getElementById('envioLibro2');
                       console.log(respuesta);
                       alert(respuesta)
                   }
-              });*/
+              });
 
 /*import { createClient } from '@supabase/supabase-js';
 
@@ -35,10 +35,10 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 
 const supabase = createClient(supabaseUrl, supabaseKey);*/
 
-alert("Aquiiiii")
+/*/
 formLibro.addEventListener('submit',function(e){
       e.preventDefault();
-
+alert("Aquiiiii")
 var libro=new FormData(formLibro);
       alert(libro.get('img'));
 const fileInput = document.getElementById('img');
@@ -53,13 +53,13 @@ fileInput.addEventListener('change', async (e) => {
     console.error(error);
   } else {
     console.log('Imagen cargada exitosamente:', data.Key);
-  }
-});
-
 
 });
+
+*/
+});
+
 /*
-
 {
         "isbn": "Isbn101",
         "titulo": "Prueba con Imagen",

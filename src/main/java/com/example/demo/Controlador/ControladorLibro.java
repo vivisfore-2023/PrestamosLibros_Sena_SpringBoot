@@ -40,7 +40,8 @@ public class ControladorLibro {
         return servicio.guardar(libro);
     }
 
-    @PostMapping("/GuardarImagen/{isbn}") //Metodo para subir imagen
+
+   /* @PostMapping("/GuardarImagen/{isbn}") //Metodo para subir imagen
     public String guardarImagen(@PathVariable("isbn") String isbn, @RequestParam("file") MultipartFile imagen){
 
         if(!imagen.isEmpty()){
@@ -65,7 +66,7 @@ public class ControladorLibro {
         //https://www.youtube.com/watch?v=h5YW-_xgmlo&t=419s
         //https://www.youtube.com/watch?v=df67kmObW7M
         return "Proceso Terminado";
-    }
+    }*/
 /*
     @PostMapping("/subirArchivo")
     public String uploadFile(@RequestPart("file") MultipartFile file) {

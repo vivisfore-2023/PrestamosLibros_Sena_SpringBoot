@@ -9,7 +9,17 @@
 
 </head>
 <body>
+<script type="text/javascript">
+    $.get("/user", function(data){
+    if(data!=null){
+    $("#usuario").html(data.nick);
+    $("#correo").html(data.email);
+    }
+    });
+</script>
 <h1>Gestión de Prestamos</h1>
+<h5 class="bg-primary dispaly-5 mt-0">Usuario:<span id="usuario"></span></h5>
+<h5 class="bg-primary dispaly-5 mt-0">Correo:<span id="correo"></span></h5>
 <div class="container col-6 aling-center mt-5">
     <div class="container col-7 aling-center" id="formulario"><h2 class="text-success">Registrar Prestamo</h2></div>
         <form action="" method="post">
